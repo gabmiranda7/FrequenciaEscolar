@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Aluno>
+
+<div class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <form method="get" asp-action="Index" asp-controller="Home" class="d-flex justify-content-center">
+                <input name="pesquisar" class="form-control w-50 mx-2" style="border:1px solid black;" />
+                <button type="submit" class="btn btn-primary w-10">Pesquisar</button>
+            </form>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 ">
+            @if (Model != null)
+            {
+                if (Model.Count() > 0)
+                {
+                    @foreach (var aluno in Model)
+                    {
+                        <div class="card mx-3 my-3 text-center justify-content-center d-flex align-content-center" style="width: 12rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">@aluno.Nome</h5>
+                            </div>
+                            <div class="card-body">
+                                <a class="btn btn-primary w-100" style="font-size:16px" asp-action="Detalhes" asp-controller="Aluno" asp-route-id="@aluno.Id">Detalhes</a>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
