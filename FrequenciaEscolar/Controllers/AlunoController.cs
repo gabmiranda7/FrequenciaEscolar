@@ -14,11 +14,18 @@ namespace FrequenciaEscolar.Controllers
             _alunoInterface = alunoInterface;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var alunos = await _alunoInterface.GetAlunos();
+            int pageSize = 10;
+            var totalAlunos = await _alunoInterface.GetTotalAlunos();
+            var alunos = await _alunoInterface.GetAlunosPaginados(page, pageSize);
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalAlunos / pageSize);
+
             return View(alunos);
         }
+
 
         public IActionResult Cadastrar()
         {

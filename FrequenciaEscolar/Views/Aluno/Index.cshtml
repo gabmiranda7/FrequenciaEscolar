@@ -32,3 +32,25 @@
         </div>
     </div>
 </div>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                <a class="page-link" href="?page=@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+<table id="tabela" class="table table-striped">
+<script>
+    $(document).ready(function () {
+        $('#tabela').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json"
+            }
+        });
+    });
+</script>

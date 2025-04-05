@@ -60,6 +60,19 @@ namespace FrequenciaEscolar.Services.Alunos
                 throw new Exception("Erro ao editar aluno: " + ex.Message);
             }
         }
+        public async Task<IEnumerable<Aluno>> GetAlunosPaginados(int pageNumber, int pageSize)
+        {
+            return await _context.Alunos
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+
+        public async Task<int> GetTotalAlunos()
+        {
+            return await _context.Alunos.CountAsync();
+        }
+
 
         public async Task<Aluno> GetAlunoPorId(int id)
         {
