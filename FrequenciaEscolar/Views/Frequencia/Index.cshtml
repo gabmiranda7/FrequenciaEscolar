@@ -1,0 +1,31 @@
+﻿<h2>Lista de Frequências</h2>
+<a class="btn btn-success mb-3" href="@Url.Action("Registrar", "Frequencia")">
+    Nova Frequência
+</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Aluno</th>
+            <th>Turma</th>
+            <th>Data</th>
+            <th>Presente</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="linha-@item.Id">
+                <td>@item.Aluno.Nome</td>
+                <td>@item.Turma.Nome</td>
+                <td>@item.Data.ToShortDateString()</td>
+                <td id="presente-@item.Id">@(item.Presente ? "Sim" : "Não")</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("Detalhes", "Frequencia", new { id = item.Id })">
+                        Editar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

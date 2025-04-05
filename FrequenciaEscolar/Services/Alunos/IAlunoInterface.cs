@@ -1,7 +1,7 @@
 ﻿using FrequenciaEscolar.Dto;
 using FrequenciaEscolar.Models;
 
-namespace FrequenciaEscolar.Services.FrequenciaEscolar
+namespace FrequenciaEscolar.Services.Alunos
 {
     public interface IAlunoInterface
     {

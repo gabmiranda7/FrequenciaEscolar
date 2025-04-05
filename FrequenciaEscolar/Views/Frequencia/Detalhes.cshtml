@@ -1,0 +1,40 @@
+﻿@model FrequenciaEscolar.Models.Frequencia
+
+@{
+    ViewData["Title"] = "Detalhes da Frequência";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3>Detalhes da Frequência</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Aluno:</dt>
+                <dd class="col-sm-8">@Model.Aluno.Nome (@Model.Aluno.Matricula)</dd>
+
+                <dt class="col-sm-4">Turma:</dt>
+                <dd class="col-sm-8">@Model.Turma.Nome</dd>
+
+                <dt class="col-sm-4">Data da Frequência:</dt>
+                <dd class="col-sm-8">@Model.Data.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-4">Presença:</dt>
+                <dd class="col-sm-8">
+                    @if (Model.Presente)
+                    {
+                        <span class="badge bg-success">Presente</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Faltou</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>

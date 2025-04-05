@@ -1,18 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FrequenciaEscolar.Dto;
 using FrequenciaEscolar.Models;
-using FrequenciaEscolar.Services.FrequenciaEscolar;
-using FrequenciaEscolar.Services.Professor;
+using FrequenciaEscolar.Services.Professores;
+using Microsoft.EntityFrameworkCore;
+using FrequenciaEscolar.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FrequenciaEscolar.Controllers
 {
     public class ProfessorController : Controller
     {
         private readonly IProfessorInterface _professorInterface;
+        private readonly AppDbContext _context;
 
-        public ProfessorController(IProfessorInterface professorInterface)
+        public ProfessorController(IProfessorInterface professorInterface, AppDbContext context)
         {
             _professorInterface = professorInterface;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -47,25 +51,32 @@ namespace FrequenciaEscolar.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Editar(Professor professorModel)
+        [HttpPost]
+        public async Task<IActionResult> Editar(Prof professorModel)
         {
             if (ModelState.IsValid)
             {
-                var professor = await _professorInterface.EditarProfessor(professorModel);
+                _context.Professores.Update(professorModel);
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Professor");
             }
-            else
-            {
-                return View(professorModel);
-            }
+
+            return View(professorModel);
         }
+
 
         public async Task<IActionResult> Editar(int id)
         {
             var professor = await _professorInterface.GetProfessorPorId(id);
 
+            if (professor == null)
+            {
+                return NotFound();
+            }
+
             return View(professor);
         }
+
 
         public async Task<IActionResult> Remover(int id)
         {

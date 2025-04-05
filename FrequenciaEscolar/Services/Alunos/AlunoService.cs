@@ -1,18 +1,17 @@
 ﻿using FrequenciaEscolar.Data;
 using FrequenciaEscolar.Dto;
 using FrequenciaEscolar.Models;
+using FrequenciaEscolar.Services.Alunos;
 using Microsoft.EntityFrameworkCore;
 
-namespace FrequenciaEscolar.Services.FrequenciaEscolar
+namespace FrequenciaEscolar.Services.Alunos
 {
     public class AlunoService : IAlunoInterface
     {
         private readonly AppDbContext _context;
-        private readonly string _sistema;
-        public AlunoService(AppDbContext context, IWebHostEnvironment sistema)
+        public AlunoService(AppDbContext context)
         {
             _context = context;
-            _sistema = sistema.WebRootPath;
         }
 
         public async Task<Aluno> CriarAluno(AlunoCriacaoDto alunoCriacaoDto)
@@ -41,8 +40,12 @@ namespace FrequenciaEscolar.Services.FrequenciaEscolar
         {
             try
             {
-                var alunoBanco = await _context.Alunos.AsNoTracking().FirstOrDefaultAsync(alunoDB => alunoDB.Id == aluno.Id);
+                var alunoBanco = await _context.Alunos.FirstOrDefaultAsync(alunoDB => alunoDB.Id == aluno.Id);
 
+                if (alunoBanco == null)
+                {
+                    throw new Exception("Aluno não encontrado.");
+                }
 
                 alunoBanco.Nome = aluno.Nome;
                 alunoBanco.Matricula = aluno.Matricula;
@@ -50,12 +53,11 @@ namespace FrequenciaEscolar.Services.FrequenciaEscolar
                 _context.Update(alunoBanco);
                 await _context.SaveChangesAsync();
 
-                return aluno;
-
+                return alunoBanco; // Retornar a entidade atualizada
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Erro ao editar aluno: " + ex.Message);
             }
         }
 

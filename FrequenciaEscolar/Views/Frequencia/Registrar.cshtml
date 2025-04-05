@@ -1,0 +1,53 @@
+﻿@using FrequenciaEscolar.Dto
+@model FrequenciaCriacaoDto
+
+<h2>Nova Frequência</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="AlunoId">Aluno:</label>
+        <select id="AlunoId" name="AlunoId" class="form-control" onchange="preencheMatricula()">
+            <option value="">Selecione um aluno</option>
+            @foreach (var aluno in ViewBag.Alunos)
+            {
+                <option value="@aluno.Id" data-matricula="@aluno.Matricula">@aluno.Nome</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="TurmaId">Turma:</label>
+        @Html.DropDownList("TurmaId", ViewBag.Turmas as SelectList, "Selecione uma turma", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Data:</label>
+        <input type="date" asp-for="Data" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Presente:</label>
+        <input type="checkbox" asp-for="Presente" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+</form>
+
+<a href="/Frequencia" class="btn btn-secondary">Voltar</a>
+
+<script>
+    function preencheMatricula() {
+        var select = document.getElementById("AlunoId");
+        var selectedOption = select.options[select.selectedIndex];
+
+        if (selectedOption) {
+            var matricula = selectedOption.getAttribute("data-matricula") || "";
+            document.getElementById("matricula").value = matricula;
+        }
+    }
+</script>

@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|c:\\projetos\\github\\frequ\u00EAncia escolar\\frequenciaescolar\\frequenciaescolar\\views\\frequencia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|solutionrelative:frequenciaescolar\\views\\frequencia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|c:\\projetos\\github\\frequ\u00EAncia escolar\\frequenciaescolar\\frequenciaescolar\\controllers\\frequenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|solutionrelative:frequenciaescolar\\controllers\\frequenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|c:\\projetos\\github\\frequ\u00EAncia escolar\\frequenciaescolar\\frequenciaescolar\\services\\frequencias\\frequenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A70F3214-D7A3-427B-BD9F-74B7A39DB82E}|FrequenciaEscolar\\FrequenciaEscolar.csproj|solutionrelative:frequenciaescolar\\services\\frequencias\\frequenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrequenciaController.cs",
+              "DocumentMoniker": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Controllers\\FrequenciaController.cs",
+              "RelativeDocumentMoniker": "FrequenciaEscolar\\Controllers\\FrequenciaController.cs",
+              "ToolTip": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Controllers\\FrequenciaController.cs",
+              "RelativeToolTip": "FrequenciaEscolar\\Controllers\\FrequenciaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T19:30:01.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrequenciaService.cs",
+              "DocumentMoniker": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Services\\Frequencias\\FrequenciaService.cs",
+              "RelativeDocumentMoniker": "FrequenciaEscolar\\Services\\Frequencias\\FrequenciaService.cs",
+              "ToolTip": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Services\\Frequencias\\FrequenciaService.cs",
+              "RelativeToolTip": "FrequenciaEscolar\\Services\\Frequencias\\FrequenciaService.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T19:29:18.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Views\\Frequencia\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrequenciaEscolar\\Views\\Frequencia\\Index.cshtml",
+              "ToolTip": "C:\\Projetos\\GitHub\\Frequ\u00EAncia Escolar\\FrequenciaEscolar\\FrequenciaEscolar\\Views\\Frequencia\\Index.cshtml",
+              "RelativeToolTip": "FrequenciaEscolar\\Views\\Frequencia\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T19:28:24.633Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

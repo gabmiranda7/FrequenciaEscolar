@@ -6,9 +6,11 @@
         public string Nome { get; set; } = string.Empty;
         public int Matricula { get; set; }
 
-        public ICollection<Frequencia> Frequencias { get; set; } = new List<Frequencia>();
+        // Um aluno pode estar em várias turmas
         public ICollection<AlunoTurma> AlunosTurmas { get; set; } = new List<AlunoTurma>();
 
-    }
+        // Um aluno pode ter várias frequências
+        public List<Frequencia> Frequencias { get; set; } = new List<Frequencia>();
 
+    }
 }

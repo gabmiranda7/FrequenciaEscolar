@@ -1,0 +1,13 @@
+﻿@model Prof
+
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <h1 class="text-body-emphasis">@Model.Nome</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            @Model.Disciplina
+        </p>
+
+        <a type="submit" class="btn btn-info w-50 mt-3" asp-controller="Home" asp-action="Index"><i class="bi bi-arrow-left-circle"></i> Voltar</a>
+
+    </div>
+</div>

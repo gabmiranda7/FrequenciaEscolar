@@ -1,7 +1,10 @@
 using FrequenciaEscolar.Data;
-using FrequenciaEscolar.Services.FrequenciaEscolar;
 using Microsoft.EntityFrameworkCore;
+using FrequenciaEscolar.Services.Alunos;
 using System;
+using FrequenciaEscolar.Services.Frequencias;
+using FrequenciaEscolar.Services.Turmas;
+using FrequenciaEscolar.Services.Professores;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 builder.Services.AddScoped<IAlunoInterface, AlunoService>();
+builder.Services.AddScoped<IFrequenciaInterface, FrequenciaService>();
+builder.Services.AddScoped<IProfessorInterface, ProfessorService>();
+builder.Services.AddScoped<ITurmaInterface, TurmaService>();
+
 
 var app = builder.Build();
 

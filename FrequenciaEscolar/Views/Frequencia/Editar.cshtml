@@ -1,0 +1,22 @@
+﻿@model FrequenciaEscolar.Models.Frequencia
+
+<h2>Editar Frequência</h2>
+
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <label>Aluno ID:</label>
+    <input type="text" asp-for="AlunoId" class="form-control" />
+
+    <label>Turma ID:</label>
+    <input type="text" asp-for="TurmaId" class="form-control" />
+
+    <label>Data:</label>
+    <input type="date" asp-for="Data" class="form-control" />
+
+    <label>Presente:</label>
+    <input type="checkbox" asp-for="Presente" />
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

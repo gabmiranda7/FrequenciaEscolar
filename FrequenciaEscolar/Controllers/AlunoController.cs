@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FrequenciaEscolar.Dto;
 using FrequenciaEscolar.Models;
-using FrequenciaEscolar.Services.FrequenciaEscolar;
+using FrequenciaEscolar.Services.Alunos;
 
 namespace FrequenciaEscolar.Controllers
 {
@@ -68,7 +68,7 @@ namespace FrequenciaEscolar.Controllers
 
         public async Task<IActionResult> Remover(int id)
         {
-            var anotacao = await _alunoInterface.RemoverAluno(id);
+            var aluno = await _alunoInterface.RemoverAluno(id);
             return RedirectToAction("Index", "Aluno");
         }
     }

@@ -44,8 +44,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Frequencia/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxEZXRhbGhlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Frequencia/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Frequencia/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Frequencia/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxSZWdpc3RyYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Professor/Cadastrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXENhZGFzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Professor/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXERldGFsaGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Professor/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Professor/Index.cshtml]
@@ -54,6 +82,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Turma/Cadastrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcQ2FkYXN0cmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Turma/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcRGV0YWxoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Turma/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/Turma/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projetos/GitHub/Frequência Escolar/FrequenciaEscolar/FrequenciaEscolar/Views/_ViewImports.cshtml]
