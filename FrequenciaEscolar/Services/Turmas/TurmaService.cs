@@ -15,6 +15,19 @@ namespace FrequenciaEscolar.Services.Turmas
             _context = context;
             _sistema = sistema.WebRootPath;
         }
+        public async Task<IEnumerable<Turma>> GetTurmasPaginadas(int page, int pageSize)
+        {
+            return await _context.Turmas
+                .OrderBy(t => t.Nome) // ou qualquer outro critério
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+        public async Task<int> GetTotalTurmas()
+        {
+            return await _context.Turmas.CountAsync();
+        }
+
         public async Task<Turma> CriarTurma(TurmaCriacaoDto turmaCriacaoDto)
         {
             try

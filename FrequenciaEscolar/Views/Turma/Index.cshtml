@@ -1,34 +1,100 @@
 ﻿@model IEnumerable<Turma>
+@{
+    ViewData["Title"] = "Lista de Turmas";
+    int currentPage = ViewBag.CurrentPage;
+    int totalPages = ViewBag.TotalPages;
+}
 
-<div class="py-5">
-    <div class="container">
+<div class="container py-5">
 
-        <div class="text-center mb-5">
-            <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Turma">Cadastrar Turma</a>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Lista de Turmas</h2>
+        <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Turma">Cadastrar Turma</a>
+    </div>
 
-        <div class="row row-cols-1 row-cols-sm-2  row-cols-md-3 g-0">
-
-            @if (Model != null)
-            {
-                @if (Model.Count() > 0)
+    <!-- Tabela de Turmas -->
+    <div class="table-responsive mb-5">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Série</th>
+                    <th style="width: 200px;">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var turma in Model)
                 {
-                    @foreach (var turma in Model)
-                    {
-
-                        <div class="card mx-3 my-3 p-2" style="width: 12rem">
-                            <div class="card-body">
-                                <h5 class="card-title">@turma.Nome</h5>
+                    <tr>
+                        <td>@turma.Nome</td>
+                        <td>@turma.Ano</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a asp-action="Editar" asp-route-id="@turma.Id" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-action="Remover" asp-route-id="@turma.Id" class="btn btn-danger btn-sm">Remover</a>
                             </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-                            <div class="card-body">
-                                <a class="btn btn-warning w-100" asp-action="Editar" asp-controller="Turma" asp-route-id="@turma.Id">Editar</a>
-                                <a class="btn btn-danger w-100" asp-action="Remover" asp-controller="Turma" asp-route-id="@turma.Id">Remover</a>
-                            </div>
+    <!-- Grid de Cards -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-5">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var turma in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@turma.Nome</h5>
+                            <p class="card-text">Ano: @turma.Ano</p>
                         </div>
-                    }
+                        <div class="card-footer bg-white border-top-0 d-flex gap-2">
+                            <a class="btn btn-warning w-100" asp-action="Editar" asp-controller="Turma" asp-route-id="@turma.Id">Editar</a>
+                            <a class="btn btn-danger w-100" asp-action="Remover" asp-controller="Turma" asp-route-id="@turma.Id">Remover</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-center">Nenhuma turma cadastrada.</p>
+        }
+    </div>
+
+    <!-- Paginação -->
+    <nav aria-label="Navegação de página">
+        <ul class="pagination justify-content-center">
+            @if (currentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(currentPage - 1)">Anterior</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                if (i == currentPage)
+                {
+                    <li class="page-item active"><span class="page-link">@i</span></li>
+                }
+                else
+                {
+                    <li class="page-item"><a class="page-link" href="?page=@i">@i</a></li>
                 }
             }
-        </div>
-    </div>
+
+            @if (currentPage < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(currentPage + 1)">Próxima</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
 </div>

@@ -11,5 +11,7 @@ namespace FrequenciaEscolar.Services.Turmas
         Task<Turma> EditarTurma(Turma turma);
         Task<Turma> RemoverTurma(int id);
         Task<List<Turma>> GetTurmasFiltro(string? pesquisar);
+        Task<IEnumerable<Turma>> GetTurmasPaginadas(int pageNumber, int pageSize);
+        Task<int> GetTotalTurmas();
     }
 }

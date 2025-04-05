@@ -13,17 +13,29 @@ namespace FrequenciaEscolar.Controllers
         private readonly ITurmaInterface _turmaInterface;
         private readonly AppDbContext _context;
 
+        public async Task<IActionResult> Index(int page = 1)
+        {
+            int pageSize = 10;
+            var totalTurmas = await _turmaInterface.GetTotalTurmas();
+            var turmas = await _turmaInterface.GetTurmasPaginadas(page, pageSize);
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalTurmas / pageSize);
+
+            return View(turmas);
+        }
+
         public TurmaController(ITurmaInterface turmaInterface, AppDbContext context)
         {
             _turmaInterface = turmaInterface;
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var turmas = await _turmaInterface.GetTurmas();
-            return View(turmas);
-        }
+        //public async Task<IActionResult> Index()
+        //{
+        //    var turmas = await _turmaInterface.GetTurmas();
+        //    return View(turmas);
+        //}
 
         public async Task<IActionResult> Cadastrar()
         {
