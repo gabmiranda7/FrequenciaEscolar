@@ -28,12 +28,25 @@ namespace FrequenciaEscolar.Controllers
             _turmaInterface = turmaInterface ?? throw new ArgumentNullException(nameof(turmaInterface));
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
         {
-            var frequencias = await _frequenciaInterface.ObterTodos();
+            var totalItems = await _context.Frequencias.CountAsync();
+
+            var frequencias = await _context.Frequencias
+                .Include(f => f.Aluno)
+                .Include(f => f.Turma)
+                .OrderBy(f => f.Data)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
             return View(frequencias);
         }
+
+        
 
         public async Task<IActionResult> Registrar()
         {

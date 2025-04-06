@@ -1,34 +1,96 @@
-﻿@model IEnumerable<Turma>
+﻿@model FrequenciaEscolar.ViewModel.PesquisaViewModel
+@{
+    ViewData["Title"] = "Início";
+}
 
-<div class="py-5">
+<div class="container py-5">
 
-    <div class="container">
-
-        <div class="text-center mb-5">
-            <form method="get" asp-action="Index" asp-controller="Home" class="d-flex justify-content-center">
-                <input name="pesquisar" class="form-control w-50 mx-2" style="border:1px solid black;" />
-                <button type="submit" class="btn btn-primary w-10">Pesquisar</button>
+    <div class="row mb-4">
+        <div class="col-md-8 mx-auto">
+            <form method="get" class="d-flex">
+                <input type="text" name="termo" value="@Model.Termo" class="form-control me-2" placeholder="Pesquisar por aluno, professor ou turma..." />
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search me-1"></i> Pesquisar
+                </button>
             </form>
         </div>
+    </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 ">
-            @if (Model != null)
+    @if (!string.IsNullOrEmpty(Model.Termo))
+    {
+        <h4 class="mb-4 text-center">Resultados para: <strong>@Model.Termo</strong></h4>
+
+        <div class="row">
+            @if (Model.Alunos.Any())
             {
-                if (Model.Count() > 0)
-                {
-                    @foreach (var aluno in Model)
-                    {
-                        <div class="card mx-3 my-3 text-center justify-content-center d-flex align-content-center" style="width: 12rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">@aluno.Nome</h5>
+                <div class="col-12 mb-4">
+                    <h5>Alunos</h5>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        @foreach (var aluno in Model.Alunos)
+                        {
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@aluno.Nome</h5>
+                                        <a class="btn btn-primary w-100" asp-controller="Aluno" asp-action="Detalhes" asp-route-id="@aluno.Id">Ver Detalhes</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <a class="btn btn-primary w-100" style="font-size:16px" asp-action="Detalhes" asp-controller="Aluno" asp-route-id="@aluno.Id">Detalhes</a>
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (Model.Professores.Any())
+            {
+                <div class="col-12 mb-4">
+                    <h5>Professores</h5>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        @foreach (var prof in Model.Professores)
+                        {
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@prof.Nome</h5>
+                                        <a class="btn btn-warning w-100" asp-controller="Professor" asp-action="Editar" asp-route-id="@prof.Id">Editar</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    }
-                }
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (Model.Turmas.Any())
+            {
+                <div class="col-12 mb-4">
+                    <h5>Turmas</h5>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        @foreach (var turma in Model.Turmas)
+                        {
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@turma.Nome</h5>
+                                        <p class="card-text">Ano: @turma.Ano</p>
+                                        <a class="btn btn-success w-100" asp-controller="Turma" asp-action="Editar" asp-route-id="@turma.Id">Editar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (!Model.Alunos.Any() && !Model.Professores.Any() && !Model.Turmas.Any())
+            {
+                <p class="text-center text-muted">Nenhum resultado encontrado.</p>
             }
         </div>
-    </div>
+    }
+    else
+    {
+        <h2 class="text-center text-muted mt-5">Bem-vindo ao Sistema de Frequência Escolar</h2>
+        <p class="text-center">Use a barra de busca acima para pesquisar alunos, professores e turmas.</p>
+    }
 </div>

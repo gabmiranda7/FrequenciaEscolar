@@ -1,34 +1,78 @@
 ﻿@model IEnumerable<Prof>
 
-<div class="py-5">
-    <div class="container">
+@{
+    ViewData["Title"] = "Lista de Professores";
+    int currentPage = ViewBag.CurrentPage;
+    int totalPages = ViewBag.TotalPages;
+}
 
-        <div class="text-center mb-5">
-            <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Professor">Cadastrar Professor</a>
-        </div>
+<div class="container py-5">
 
-        <div class="row row-cols-1 row-cols-sm-2  row-cols-md-3 g-0">
-
-            @if (Model != null)
-            {
-                @if (Model.Count() > 0)
-                {
-                    @foreach (var professor in Model)
-                    {
-
-                        <div class="card mx-3 my-3 p-2" style="width: 12rem">
-                            <div class="card-body">
-                                <h5 class="card-title">@professor.Nome</h5>
-                            </div>
-
-                            <div class="card-body">
-                                <a class="btn btn-warning w-100" asp-action="Editar" asp-controller="Professor" asp-route-id="@professor.Id">Editar</a>
-                                <a class="btn btn-danger w-100" asp-action="Remover" asp-controller="Professor" asp-route-id="@professor.Id">Remover</a>
-                            </div>
-                        </div>
-                    }
-                }
-            }
-        </div>
+    <!-- Cabeçalho -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-user-tie me-2 text-primary"></i>Lista de Professores</h2>
+        <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Professor">
+            <i class="fas fa-plus me-1"></i> Cadastrar Professor
+        </a>
     </div>
+
+    <!-- Grid de Professores -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var professor in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-secondary mb-3"></i>
+                            <h5 class="card-title fw-bold">@professor.Nome</h5>
+                        </div>
+                        <div class="card-footer bg-white border-0 d-flex gap-2">
+                            <a class="btn btn-outline-warning w-100" asp-action="Editar" asp-controller="Professor" asp-route-id="@professor.Id">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a class="btn btn-outline-danger w-100" asp-action="Remover" asp-controller="Professor" asp-route-id="@professor.Id">
+                                <i class="fas fa-trash"></i> Remover
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    Nenhum professor cadastrado.
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Paginação -->
+    <nav aria-label="Navegação de página">
+        <ul class="pagination justify-content-center">
+            @if (currentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(currentPage - 1)">Anterior</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" href="?page=@i">@i</a>
+                </li>
+            }
+
+            @if (currentPage < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(currentPage + 1)">Próxima</a>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>

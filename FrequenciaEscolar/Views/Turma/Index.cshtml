@@ -7,19 +7,22 @@
 
 <div class="container py-5">
 
+    <!-- Cabeçalho -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Lista de Turmas</h2>
-        <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Turma">Cadastrar Turma</a>
+        <h2><i class="fas fa-chalkboard-teacher me-2 text-primary"></i>Lista de Turmas</h2>
+        <a class="btn btn-success" asp-action="Cadastrar" asp-controller="Turma">
+            <i class="fas fa-plus me-1"></i> Cadastrar Turma
+        </a>
     </div>
 
     <!-- Tabela de Turmas -->
     <div class="table-responsive mb-5">
-        <table class="table table-striped table-bordered align-middle">
-            <thead class="table-dark">
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="table-dark text-white">
                 <tr>
                     <th>Nome</th>
                     <th>Série</th>
-                    <th style="width: 200px;">Ações</th>
+                    <th class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,10 +31,14 @@
                     <tr>
                         <td>@turma.Nome</td>
                         <td>@turma.Ano</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a asp-action="Editar" asp-route-id="@turma.Id" class="btn btn-warning btn-sm">Editar</a>
-                                <a asp-action="Remover" asp-route-id="@turma.Id" class="btn btn-danger btn-sm">Remover</a>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a asp-action="Editar" asp-route-id="@turma.Id" class="btn btn-sm btn-warning me-1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-action="Remover" asp-route-id="@turma.Id" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -40,21 +47,26 @@
         </table>
     </div>
 
-    <!-- Grid de Cards -->
+    <!-- Grid de Cartões -->
+    <h4 class="mb-4"><i class="fas fa-th-large me-1 text-secondary"></i>Visualização em Cartões</h4>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-5">
         @if (Model != null && Model.Any())
         {
             @foreach (var turma in Model)
             {
                 <div class="col">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm border-0 rounded-4">
                         <div class="card-body">
-                            <h5 class="card-title">@turma.Nome</h5>
-                            <p class="card-text">Ano: @turma.Ano</p>
+                            <h5 class="card-title text-primary fw-bold">@turma.Nome</h5>
+                            <p class="card-text"><i class="fas fa-graduation-cap me-1"></i>Série: @turma.Ano</p>
                         </div>
-                        <div class="card-footer bg-white border-top-0 d-flex gap-2">
-                            <a class="btn btn-warning w-100" asp-action="Editar" asp-controller="Turma" asp-route-id="@turma.Id">Editar</a>
-                            <a class="btn btn-danger w-100" asp-action="Remover" asp-controller="Turma" asp-route-id="@turma.Id">Remover</a>
+                        <div class="card-footer bg-white border-0 d-flex gap-2">
+                            <a class="btn btn-outline-warning w-100" asp-action="Editar" asp-controller="Turma" asp-route-id="@turma.Id">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a class="btn btn-outline-danger w-100" asp-action="Remover" asp-controller="Turma" asp-route-id="@turma.Id">
+                                <i class="fas fa-trash"></i> Remover
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +74,11 @@
         }
         else
         {
-            <p class="text-center">Nenhuma turma cadastrada.</p>
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    Nenhuma turma cadastrada.
+                </div>
+            </div>
         }
     </div>
 
@@ -72,29 +88,27 @@
             @if (currentPage > 1)
             {
                 <li class="page-item">
-                    <a class="page-link" href="?page=@(currentPage - 1)">Anterior</a>
+                    <a class="page-link" href="?page=@(currentPage - 1)">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </a>
                 </li>
             }
 
             @for (int i = 1; i <= totalPages; i++)
             {
-                if (i == currentPage)
-                {
-                    <li class="page-item active"><span class="page-link">@i</span></li>
-                }
-                else
-                {
-                    <li class="page-item"><a class="page-link" href="?page=@i">@i</a></li>
-                }
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" href="?page=@i">@i</a>
+                </li>
             }
 
             @if (currentPage < totalPages)
             {
                 <li class="page-item">
-                    <a class="page-link" href="?page=@(currentPage + 1)">Próxima</a>
+                    <a class="page-link" href="?page=@(currentPage + 1)">
+                        Próxima <i class="fas fa-chevron-right"></i>
+                    </a>
                 </li>
             }
         </ul>
     </nav>
-
 </div>

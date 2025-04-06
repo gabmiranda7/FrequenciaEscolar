@@ -1,13 +1,64 @@
-﻿@model Turma
+﻿@model FrequenciaEscolar.ViewModel.AlunoDetalhesViewModel
 
-<div class="container my-5">
-    <div class="p-5 text-center bg-body-tertiary rounded-3">
-        <h1 class="text-body-emphasis">@Model.Nome</h1>
-        <p class="col-lg-8 mx-auto fs-5 text-muted">
-            @Model.Ano
-        </p>
+@{
+    ViewData["Title"] = "Detalhes do Aluno";
+}
 
-        <a type="submit" class="btn btn-info w-50 mt-3" asp-controller="Home" asp-action="Index"><i class="bi bi-arrow-left-circle"></i> Voltar</a>
+<div class="container py-5">
+    <div class="card shadow-lg rounded-4 p-4 mb-4">
+        <div class="card-body">
+            <h2 class="card-title mb-2"><i class="fas fa-user-graduate me-2 text-primary"></i>@Model.Nome</h2>
+            <p class="card-text"><strong>Matrícula:</strong> @Model.Matricula</p>
+        </div>
+    </div>
 
+    <div class="card shadow rounded-4">
+        <div class="card-body">
+            <h4 class="mb-3"><i class="fas fa-calendar-check me-2 text-success"></i>Frequências Registradas</h4>
+
+            @if (Model.Frequencias != null && Model.Frequencias.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Turma</th>
+                                <th scope="col">Presença</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var freq in Model.Frequencias)
+                            {
+                                <tr>
+                                    <td>@freq.Data.ToString("dd/MM/yyyy")</td>
+                                    <td>@freq.Turma?.Nome</td>
+                                    <td>
+                                        @if (freq.Presente)
+                                        {
+                                            <span class="badge bg-success px-3 py-2"><i class="fas fa-check-circle me-1"></i>Presente</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger px-3 py-2"><i class="fas fa-times-circle me-1"></i>Faltou</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info mt-3">
+                    Nenhuma frequência registrada ainda.
+                </div>
+            }
+
+            <a href="@Url.Action("Index", "Aluno")" class="btn btn-secondary mt-4">
+                <i class="fas fa-arrow-left me-1"></i> Voltar
+            </a>
+        </div>
     </div>
 </div>

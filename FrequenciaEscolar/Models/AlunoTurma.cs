@@ -10,5 +10,8 @@ namespace FrequenciaEscolar.Models
 
         public int TurmaId { get; set; }
         public required Turma Turma { get; set; }
+        public int ProfessorId { get; set; } // FK
+        public Prof Professor { get; set; }  // Navigation property
     }
 }
+

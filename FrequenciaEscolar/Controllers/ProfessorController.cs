@@ -19,11 +19,25 @@ namespace FrequenciaEscolar.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var professores = await _professorInterface.GetProfessores();
+            int pageSize = 6;
+
+            var query = _context.Professores.AsQueryable();
+
+            int totalItems = await query.CountAsync();
+            var professores = await query
+                .OrderBy(p => p.Nome)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
             return View(professores);
         }
+
 
         public IActionResult Cadastrar()
         {

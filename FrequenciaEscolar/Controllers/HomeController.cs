@@ -1,21 +1,66 @@
 using System.Diagnostics;
+using FrequenciaEscolar.Data;
 using FrequenciaEscolar.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using FrequenciaEscolar.ViewModel;
 
-namespace FrequenciaEscolar.Controllers
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly AppDbContext _context;
+
+    public HomeController(AppDbContext context)
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        _context = context;
+    }
+    public IActionResult Index(string termo)
+    {
+        var viewModel = new PesquisaViewModel
         {
-            _logger = logger;
+            Termo = termo,
+            Alunos = string.IsNullOrEmpty(termo) ? new List<Aluno>() :
+                     _context.Alunos.Where(a => a.Nome.Contains(termo)).ToList(),
+
+            Professores = string.IsNullOrEmpty(termo) ? new List<Prof>() :
+                          _context.Professores.Where(p => p.Nome.Contains(termo)).ToList(),
+
+            Turmas = string.IsNullOrEmpty(termo) ? new List<Turma>() :
+                     _context.Turmas.Where(t => t.Nome.Contains(termo)).ToList()
+        };
+
+        return View(viewModel);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Pesquisar(string termo)
+    {
+        if (string.IsNullOrWhiteSpace(termo))
+        {
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Index()
+        var alunos = await _context.Alunos
+            .Where(a => a.Nome.Contains(termo))
+            .ToListAsync();
+
+        var professores = await _context.Professores
+            .Where(p => p.Nome.Contains(termo))
+            .ToListAsync();
+
+        var turmas = await _context.Turmas
+            .Where(t => t.Nome.Contains(termo) || t.Ano.ToString().Contains(termo))
+            .Include(t => t.Professor)
+            .ToListAsync();
+
+        var resultado = new PesquisaViewModel
         {
-            return View();
-        }
+            Termo = termo,
+            Alunos = alunos,
+            Professores = professores,
+            Turmas = turmas
+        };
+
+        return View("Resultado", resultado);
     }
 }

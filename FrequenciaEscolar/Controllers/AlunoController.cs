@@ -2,17 +2,23 @@
 using FrequenciaEscolar.Dto;
 using FrequenciaEscolar.Models;
 using FrequenciaEscolar.Services.Alunos;
+using FrequenciaEscolar.ViewModel;
+using Microsoft.EntityFrameworkCore;
+using FrequenciaEscolar.Data;
+
 
 namespace FrequenciaEscolar.Controllers
 {
     public class AlunoController : Controller
     {
         private readonly IAlunoInterface _alunoInterface;
-
-        public AlunoController(IAlunoInterface alunoInterface)
+        private readonly AppDbContext _context;
+        public AlunoController(AppDbContext context, IAlunoInterface alunoInterface)
         {
+            _context = context;
             _alunoInterface = alunoInterface;
         }
+
 
         public async Task<IActionResult> Index(int page = 1)
         {
@@ -30,12 +36,6 @@ namespace FrequenciaEscolar.Controllers
         public IActionResult Cadastrar()
         {
             return View();
-        }
-
-        public async Task<IActionResult> Detalhes(int id)
-        {
-            var alunos = await _alunoInterface.GetAlunoPorId(id);
-            return View(alunos);
         }
 
         [HttpPost]
@@ -78,5 +78,30 @@ namespace FrequenciaEscolar.Controllers
             var aluno = await _alunoInterface.RemoverAluno(id);
             return RedirectToAction("Index", "Aluno");
         }
+        public IActionResult Detalhes(int id)
+        {
+            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            if (aluno == null)
+            {
+                return NotFound();
+            }
+
+            var frequencias = _context.Frequencias
+                .Include(f => f.Turma)
+                .Where(f => f.AlunoId == id)
+                .OrderByDescending(f => f.Data)
+                .ToList();
+
+            var viewModel = new AlunoDetalhesViewModel
+            {
+                AlunoId = aluno.Id,
+                Nome = aluno.Nome,
+                Matricula = aluno.Matricula,
+                Frequencias = frequencias
+            };
+
+            return View(viewModel);
+        }
+
     }
 }
