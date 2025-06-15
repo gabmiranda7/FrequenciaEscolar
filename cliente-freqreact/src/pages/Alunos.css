@@ -1,0 +1,97 @@
+.alunos-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.alunos-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0a3d62;
+  border-bottom: 2px solid #0a3d62;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.alunos-header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.form-aluno,
+.lista-alunos {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0a66c2;
+}
+
+.card-aluno {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e3e3e3;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+}
+
+.card-aluno:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-actions button {
+  background-color: #1e90ff;
+}
+
+.card-actions button:last-child {
+  background-color: #dc3545;
+}
+
+.card-actions button:last-child:hover {
+  background-color: #a71d2a;
+}

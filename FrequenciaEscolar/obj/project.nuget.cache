@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tvdAtdQer74=",
+  "dgSpecHash": "BjalUxHOxFg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Godoy\\OneDrive\\Faculdade\\Frequencia Escolar\\FrequenciaEscolar\\FrequenciaEscolar.csproj",
+  "projectFilePath": "C:\\Users\\Godoy\\OneDrive\\Área de Trabalho\\FrequenciaEscolarReact\\FrequenciaEscolar\\FrequenciaEscolar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Godoy\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Godoy\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

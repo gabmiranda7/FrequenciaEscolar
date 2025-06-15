@@ -17,101 +17,101 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrequenciaEscolar
 build_property.RootNamespace = FrequenciaEscolar
-build_property.ProjectDir = C:\Users\Godoy\OneDrive\Faculdade\Frequencia Escolar\FrequenciaEscolar\
+build_property.ProjectDir = C:\Users\Godoy\OneDrive\Área de Trabalho\FrequenciaEscolarReact\FrequenciaEscolar\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Godoy\OneDrive\Faculdade\Frequencia Escolar\FrequenciaEscolar
+build_property.MSBuildProjectDirectory = C:\Users\Godoy\OneDrive\Área de Trabalho\FrequenciaEscolarReact\FrequenciaEscolar
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Aluno/Cadastrar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Aluno/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cQ2FkYXN0cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Aluno/Detalhes.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Aluno/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cRGV0YWxoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Aluno/Editar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Aluno/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Aluno/Index.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Aluno/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Frequencia/Detalhes.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Frequencia/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxEZXRhbGhlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Frequencia/Editar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Frequencia/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Frequencia/Index.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Frequencia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Frequencia/Registrar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Frequencia/Registrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJlcXVlbmNpYVxSZWdpc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Home/Index.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Home/Resultado.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Home/Resultado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN1bHRhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Professor/Cadastrar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Professor/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXENhZGFzdHJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Professor/Detalhes.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Professor/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXERldGFsaGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Professor/Editar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Professor/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Professor/Index.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Professor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Turma/Cadastrar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Turma/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcQ2FkYXN0cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Turma/Detalhes.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Turma/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcRGV0YWxoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Turma/Editar.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Turma/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Turma/Index.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Turma/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/_ViewImports.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/_ViewStart.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Godoy/OneDrive/Faculdade/Frequencia Escolar/FrequenciaEscolar/Views/Shared/_Layout.cshtml]
+[C:/Users/Godoy/OneDrive/Área de Trabalho/FrequenciaEscolarReact/FrequenciaEscolar/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6voo8kpw5x

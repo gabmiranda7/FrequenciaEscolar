@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FrequenciaEscolar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5568b2fe6d1ef9d5da71cd2ef8ee701642c48c91")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00f0f5d7b3f39d67988d3a2b72ef51ae21af3f3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FrequenciaEscolar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FrequenciaEscolar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
