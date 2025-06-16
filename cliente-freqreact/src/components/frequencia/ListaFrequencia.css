@@ -1,27 +1,49 @@
 .lista-frequencia-container {
-  padding: 1rem 2rem;
-  background-color: #f2f8ff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-top: 2rem;
+  padding: 20px;
+  background-color: #fdf8f2;
+  border-radius: 12px;
+  margin-top: 20px;
 }
 
-.lista-frequencia {
-  list-style: none;
-  padding: 0;
+.titulo-frequencia {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #444;
+  text-align: center;
 }
 
-.frequencia-item {
+.mensagem-vazia {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}
+
+.frequencia-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.frequencia-card {
   background: white;
-  border: 1px solid #cce0ff;
-  border-left: 6px solid #3399ff;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  font-family: sans-serif;
-  transition: background 0.2s ease;
+  border: 1px solid #ccc;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
 }
 
-.frequencia-item:hover {
-  background: #e9f4ff;
+.frequencia-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.presente {
+  color: green;
+  font-weight: bold;
+}
+
+.faltou {
+  color: red;
+  font-weight: bold;
 }

@@ -3,15 +3,20 @@ import axios from 'axios';
 
 const FormFrequencia = ({ onSave }) => {
   const [alunos, setAlunos] = useState([]);
+  const [turmas, setTurmas] = useState([]);
   const [alunoId, setAlunoId] = useState('');
   const [turmaId, setTurmaId] = useState('');
   const [data, setData] = useState('');
-  const [presente, setPresente] = useState('true'); // como string para select
+  const [presente, setPresente] = useState('true');
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/api/aluno`)
       .then(res => setAlunos(res.data))
       .catch(err => console.error("Erro ao buscar alunos", err));
+
+    axios.get(`${process.env.REACT_APP_API_URL}/api/turmaapi`)
+      .then(res => setTurmas(res.data))
+      .catch(err => console.error("Erro ao buscar turmas", err));
   }, []);
 
   const handleSubmit = async (e) => {
@@ -25,7 +30,7 @@ const FormFrequencia = ({ onSave }) => {
     };
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/frequencia`, novaFrequencia);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/frequenciaapi`, novaFrequencia);
       onSave();
 
       // limpar campos
@@ -50,13 +55,13 @@ const FormFrequencia = ({ onSave }) => {
         ))}
       </select>
 
-      <label>ID da Turma</label>
-      <input
-        type="number"
-        value={turmaId}
-        onChange={(e) => setTurmaId(e.target.value)}
-        required
-      />
+      <label>Turma</label>
+      <select value={turmaId} onChange={(e) => setTurmaId(e.target.value)} required>
+        <option value="">Selecione uma turma</option>
+        {turmas.map((t) => (
+          <option key={t.id} value={t.id}>{t.nome}</option>
+        ))}
+      </select>
 
       <label>Data</label>
       <input

@@ -1,0 +1,34 @@
+.turmas-page {
+  padding: 2rem;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+}
+
+.turmas-page h1 {
+  text-align: center;
+  color: #2a4d9c;
+  margin-bottom: 2rem;
+}
+
+.turmas-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .turmas-conteudo {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .turmas-form {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .turmas-lista {
+    flex: 2;
+  }
+}

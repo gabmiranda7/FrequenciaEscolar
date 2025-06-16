@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './ListaFrequencia.css'; // Se quiser customizar via CSS
+import './ListaFrequencia.css';
 
 const ListaFrequencia = () => {
   const [frequencias, setFrequencias] = useState([]);
@@ -13,21 +13,23 @@ const ListaFrequencia = () => {
 
   return (
     <div className="lista-frequencia-container">
-      <h2>Frequências Registradas</h2>
+      <h2 className="titulo-frequencia">Frequências Registradas</h2>
 
       {frequencias.length === 0 ? (
-        <p>Nenhuma frequência registrada ainda.</p>
+        <p className="mensagem-vazia">Nenhuma frequência registrada ainda.</p>
       ) : (
-        <ul className="lista-frequencia">
+        <div className="frequencia-grid">
           {frequencias.map((f) => (
-            <li key={f.id} className="frequencia-item">
-              <strong>Aluno:</strong> {f.aluno?.nome || `#${f.alunoId}`}<br />
-              <strong>Turma:</strong> {f.turma?.nome || `#${f.turmaId}`}<br />
-              <strong>Data:</strong> {new Date(f.data).toLocaleDateString()}<br />
-              <strong>Status:</strong> {f.presente ? 'Presente' : 'Faltou'}
-            </li>
+            <div key={f.id} className="frequencia-card">
+              <p><strong>Aluno:</strong> {f.aluno?.nome || `#${f.alunoId}`}</p>
+              <p><strong>Turma:</strong> {f.turma?.nome || `#${f.turmaId}`}</p>
+              <p><strong>Data:</strong> {new Date(f.data).toLocaleDateString()}</p>
+              <p><strong>Status:</strong> <span className={f.presente ? "presente" : "faltou"}>
+                {f.presente ? 'Presente' : 'Faltou'}
+              </span></p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

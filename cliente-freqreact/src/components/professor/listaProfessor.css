@@ -1,0 +1,72 @@
+.lista-prof-container {
+  margin: 2rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+  background-color: #f7f9ff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.lista-prof-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #3b3f99;
+}
+
+.grid-prof {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card-prof {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-prof h3 {
+  margin: 0 0 0.5rem;
+  color: #2c2f77;
+}
+
+.card-prof p {
+  color: #555;
+}
+
+.card-prof-botoes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-prof button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.card-prof .editar {
+  background-color: #4a7cff;
+  color: white;
+}
+
+.card-prof .editar:hover {
+  background-color: #365dcc;
+}
+
+.card-prof .remover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.card-prof .remover:hover {
+  background-color: #d63636;
+}
