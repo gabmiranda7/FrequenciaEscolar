@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Plus, Save } from 'lucide-react';
-import './formTurma.css';
 
 const FormTurma = ({ onSave, turmaEditando }) => {
   const [nome, setNome] = useState('');
@@ -27,7 +25,6 @@ const FormTurma = ({ onSave, turmaEditando }) => {
     e.preventDefault();
 
     const novaTurma = { nome, ano, professorId };
-    console.log("Turma a ser enviada:", novaTurma);
 
     try {
       if (turmaEditando) {
@@ -49,43 +46,40 @@ const FormTurma = ({ onSave, turmaEditando }) => {
   };
 
   return (
-    <div className="form-turma-card">
-      <h2>{turmaEditando ? "Editar Turma" : "Nova Turma"} <Plus size={20} /></h2>
-      <form onSubmit={handleSubmit} className="form-turma">
-        <label>Nome:</label>
-        <input
-          type="text"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          required
-        />
+    <form onSubmit={handleSubmit} className="form-container">
+      <h2>{turmaEditando ? "Editar Turma" : "Cadastrar Turma"}</h2>
 
-        <label>Ano:</label>
-        <input
-          type="text"
-          value={ano}
-          onChange={(e) => setAno(e.target.value)}
-          required
-        />
+      <input
+        type="text"
+        placeholder="Nome"
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+        required
+      />
 
-        <label>Professor:</label>
-        <select
-          value={professorId}
-          onChange={(e) => setProfessorId(e.target.value)}
-          required
-        >
-          <option value="">Selecione</option>
-          {professores.map(p => (
-            <option key={p.id} value={p.id}>{p.nome}</option>
-          ))}
-        </select>
+      <input
+        type="text"
+        placeholder="Ano"
+        value={ano}
+        onChange={(e) => setAno(e.target.value)}
+        required
+      />
 
-        <button type="submit" className="btn-salvar">
-          <Save size={16} style={{ marginRight: "6px" }} />
-          Salvar
-        </button>
-      </form>
-    </div>
+      <select
+        value={professorId}
+        onChange={(e) => setProfessorId(e.target.value)}
+        required
+      >
+        <option value="">Selecione um professor</option>
+        {professores.map(p => (
+          <option key={p.id} value={p.id}>{p.nome}</option>
+        ))}
+      </select>
+
+      <button type="submit">
+        {turmaEditando ? "Atualizar" : "Salvar"}
+      </button>
+    </form>
   );
 };
 

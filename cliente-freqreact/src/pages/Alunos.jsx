@@ -12,7 +12,7 @@ const Alunos = () => {
     setContador(prev => prev + 1);
     setAlunoEditando(null);
   };
-
+  
   return (
     <div className="alunos-container">
       <div className="alunos-header-card">

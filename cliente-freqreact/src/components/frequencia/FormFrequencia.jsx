@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './FormFrequencia.css';
 
-const FormFrequencia = ({ onSave }) => {
+
+const FormFrequencia = ({ frequenciaEditando, onSave }) => {
   const [alunos, setAlunos] = useState([]);
   const [turmas, setTurmas] = useState([]);
   const [alunoId, setAlunoId] = useState('');
@@ -19,6 +21,15 @@ const FormFrequencia = ({ onSave }) => {
       .catch(err => console.error("Erro ao buscar turmas", err));
   }, []);
 
+  useEffect(() => {
+    if (frequenciaEditando) {
+      setAlunoId(frequenciaEditando.alunoId || '');
+      setTurmaId(frequenciaEditando.turmaId || '');
+      setData(frequenciaEditando.data?.substring(0, 10) || '');
+      setPresente(frequenciaEditando.presente ? 'true' : 'false');
+    }
+  }, [frequenciaEditando]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,14 +41,21 @@ const FormFrequencia = ({ onSave }) => {
     };
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/frequenciaapi`, novaFrequencia);
-      onSave();
+      if (frequenciaEditando) {
+        await axios.put(
+          `${process.env.REACT_APP_API_URL}/api/frequenciaapi/${frequenciaEditando.id}`,
+          { ...novaFrequencia, id: frequenciaEditando.id }
+        );
+      } else {
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/frequenciaapi`, novaFrequencia);
+      }
 
-      // limpar campos
+      // limpar
       setAlunoId('');
       setTurmaId('');
       setData('');
       setPresente('true');
+      onSave();
     } catch (error) {
       console.error("Erro ao salvar frequência:", error);
     }
@@ -45,9 +63,8 @@ const FormFrequencia = ({ onSave }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Registrar Frequência</h2>
+      <h2>{frequenciaEditando ? "Editar Frequência" : "Registrar Frequência"}</h2>
 
-      <label>Aluno</label>
       <select value={alunoId} onChange={(e) => setAlunoId(e.target.value)} required>
         <option value="">Selecione um aluno</option>
         {alunos.map((a) => (
@@ -55,7 +72,6 @@ const FormFrequencia = ({ onSave }) => {
         ))}
       </select>
 
-      <label>Turma</label>
       <select value={turmaId} onChange={(e) => setTurmaId(e.target.value)} required>
         <option value="">Selecione uma turma</option>
         {turmas.map((t) => (
@@ -63,7 +79,6 @@ const FormFrequencia = ({ onSave }) => {
         ))}
       </select>
 
-      <label>Data</label>
       <input
         type="date"
         value={data}
@@ -71,13 +86,14 @@ const FormFrequencia = ({ onSave }) => {
         required
       />
 
-      <label>Presente?</label>
       <select value={presente} onChange={(e) => setPresente(e.target.value)} required>
-        <option value="true">Sim</option>
-        <option value="false">Não</option>
+        <option value="true">Presente</option>
+        <option value="false">Faltou</option>
       </select>
 
-      <button type="submit">Salvar Frequência</button>
+      <button type="submit">
+        {frequenciaEditando ? "Atualizar" : "Salvar"}
+      </button>
     </form>
   );
 };

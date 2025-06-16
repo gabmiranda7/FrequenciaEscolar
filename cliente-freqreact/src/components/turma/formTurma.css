@@ -1,55 +1,39 @@
-.form-turma-card {
-  background-color: #f0f8ff;
-  padding: 2rem;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.form-turma-card h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #154c79;
-}
-
-.form-turma {
+.form-container {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
-.form-turma label {
-  margin-top: 1rem;
-  font-weight: bold;
+.form-container h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
   color: #333;
 }
 
-.form-turma input,
-.form-turma select {
-  padding: 0.6rem;
-  border-radius: 6px;
+.form-container input,
+.form-container select {
+  padding: 10px;
   border: 1px solid #ccc;
-  margin-top: 0.3rem;
-  font-size: 1rem;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-.btn-salvar {
-  margin-top: 1.5rem;
-  background-color: #0077cc;
-  color: white;
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-weight: bold;
+.form-container button {
+  background-color: #5e4b8b;
+  color: #fff;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: background 0.3s ease;
 }
 
-.btn-salvar:hover {
-  background-color: #005fa3;
+.form-container button:hover {
+  background-color: #4a3973;
 }

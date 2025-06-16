@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './formProfessor.css';
 
 const FormProfessor = ({ professorEditando, onSave }) => {
   const [professor, setProfessor] = useState({ nome: '', disciplina: '' });
@@ -32,32 +31,29 @@ const FormProfessor = ({ professorEditando, onSave }) => {
   };
 
   return (
-    <div className="form-container-prof">
+    <form onSubmit={handleSubmit} className="form-container">
       <h2>{professor.id ? 'Editar Professor' : 'Cadastrar Professor'}</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nome:
-          <input
-            type="text"
-            name="nome"
-            value={professor.nome}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Disciplina:
-          <input
-            type="text"
-            name="disciplina"
-            value={professor.disciplina}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit">{professor.id ? 'Atualizar' : 'Salvar'}</button>
-      </form>
-    </div>
+
+      <input
+        type="text"
+        name="nome"
+        placeholder="Nome"
+        value={professor.nome}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="text"
+        name="disciplina"
+        placeholder="Disciplina"
+        value={professor.disciplina}
+        onChange={handleChange}
+        required
+      />
+
+      <button type="submit">{professor.id ? 'Atualizar' : 'Salvar'}</button>
+    </form>
   );
 };
 

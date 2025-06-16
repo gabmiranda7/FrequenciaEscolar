@@ -41,20 +41,31 @@ const FormAluno = ({ alunoEditando, onSave }) => {
   return (
     <form onSubmit={handleSubmit}>
       <h2>{alunoEditando ? "Editar Aluno" : "Novo Aluno"}</h2>
+      <label htmlfor="nome">Nome</label>
       <input
         type="text"
-        placeholder="Nome"
+        placeholder="Nome do Aluno"
         value={nome}
         onChange={e => setNome(e.target.value)}
         required
       />
+      <label htmlFor="matricula">Matrícula</label>
       <input
-        type="number"
-        placeholder="Matrícula"
+        id="matricula"
+        type="text"
+        placeholder="Número de Matrícula"
         value={matricula}
-        onChange={e => setMatricula(e.target.value)}
+        onChange={(e) => {
+          const valor = e.target.value;
+          if (/^\d*$/.test(valor)) {
+            setMatricula(valor.slice(0, 8));
+          }
+        }}
+        inputMode="numeric"
+        pattern="\d*"
         required
       />
+
       <button type="submit">{alunoEditando ? "Atualizar" : "Cadastrar"}</button>
     </form>
   );
